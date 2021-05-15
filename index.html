@@ -1,26 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/433888fe69.js" crossorigin="anonymous" ></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
+    <script type="text/javascript">
+    	function check_input()
+    	{
+    		if(document.getElementById("email").value == "")
+	        {
+	        	document.getElementById("mandatory-msg-email").style.visibility = "visible";
+	        }
+	        else
+	        {
+	        	document.getElementById("mandatory-msg-email").style.visibility = "hidden";
+	        }
+    		if(document.getElementById("password").value == "")
+	        {
+	        	document.getElementById("mandatory-msg-pass").style.visibility = "visible";
+	        }
+	        else
+	        {
+	        	document.getElementById("mandatory-msg-pass").style.visibility = "hidden";
+	        }
+    	}
+    </script>
 </head>
 <body>
-    <div class="container">
+	<div class="Aligner">
+    <div class="container" style="text-align:center">
         <h1>Log In</h1>
         <div class="box">
             <i class="fa fa-envelope"></i>
             <input type="email" name="email" id="email" placeholder="Enter Your Email">
         </div>
+         <p id="mandatory-msg-email" style="color:red;visibility: hidden;">* Please type your email</p>
         <div class="box">
             <i class="fa fa-key"></i>
             <input type="password" name="password" id="password" placeholder="Enter Your Password">
         </div>
-        <button class="btn">Sign In</button>
+        <p id="mandatory-msg-pass" style="color:red;visibility: hidden;">* Please type your password</p>
+        <button class="btn" onclick="check_input()">Sign In</button>
     </div>
-    
+</div>
 </body>
 </html>
